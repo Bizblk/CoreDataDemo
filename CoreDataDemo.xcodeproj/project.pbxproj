@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		147F5C63264B0602008A337A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F5C62264B0602008A337A /* StorageManager.swift */; };
+		147F5C6526502547008A337A /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F5C6426502547008A337A /* AlertController.swift */; };
 		A8E52A7626499F7B00C11C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E52A7526499F7B00C11C77 /* AppDelegate.swift */; };
 		A8E52A7A26499F7B00C11C77 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E52A7926499F7B00C11C77 /* TaskListViewController.swift */; };
 		A8E52A8026499F7B00C11C77 /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8E52A7E26499F7B00C11C77 /* CoreDataDemo.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		147F5C62264B0602008A337A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		147F5C6426502547008A337A /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		A8E52A7226499F7B00C11C77 /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E52A7526499F7B00C11C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8E52A7926499F7B00C11C77 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				A8E52A7926499F7B00C11C77 /* TaskListViewController.swift */,
+				147F5C6426502547008A337A /* AlertController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8E52A7A26499F7B00C11C77 /* TaskListViewController.swift in Sources */,
+				147F5C6526502547008A337A /* AlertController.swift in Sources */,
 				A8E52A8026499F7B00C11C77 /* CoreDataDemo.xcdatamodeld in Sources */,
 				A8E52A7626499F7B00C11C77 /* AppDelegate.swift in Sources */,
 				147F5C63264B0602008A337A /* StorageManager.swift in Sources */,

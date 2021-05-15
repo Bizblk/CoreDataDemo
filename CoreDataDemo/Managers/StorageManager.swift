@@ -5,14 +5,13 @@
 //  Created by Виталий Оранский on 11.05.2021.
 //
 import CoreData
-import UIKit
 
 class StorageManager {
     
     static let shared = StorageManager()
     
     // MARK: - Core Data stack
-    lazy var persistentContainer: NSPersistentContainer = {
+    private var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreDataDemo")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -22,9 +21,12 @@ class StorageManager {
         return container
     }()
     
-    private lazy var context = persistentContainer.viewContext
+    private var context: NSManagedObjectContext
     
-    private init() {}
+    
+    private init() {
+        context = persistentContainer.viewContext
+    }
     
     // MARK: - Core Data Saving support
     func saveContext() {
@@ -50,36 +52,24 @@ class StorageManager {
         }
     }
     
-    
-    func createTask() -> Task? {
-        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Task", in: context) else { return nil }
-        guard let task = NSManagedObject(entity: entityDescription, insertInto: context) as? Task else { return nil }
-        return task
+    func save(_ taskName: String, completion: (Task) -> Void) {
+        let task = Task(context: context)
+        task.title = taskName
+        
+        completion(task)
+        saveContext()
     }
     
-    
     func editTask(task: Task, newValue: String) {
-        
-        do {
-            task.title = newValue
-            try context.save()
-            
-        } catch let error {
-            print(error.localizedDescription)
-        }
-        
+        task.title = newValue
+        saveContext()
     }    
     
     func deleteTask(task: Task) {
         context.delete(task)
-        do {
-            try context.save()
-        } catch let error {
-            print(error.localizedDescription)
-        }
-        
+        saveContext()
     }
     
-
+    
     
 }
